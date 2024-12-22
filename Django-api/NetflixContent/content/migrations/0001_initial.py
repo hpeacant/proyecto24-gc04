@@ -10,6 +10,8 @@ class Migration(migrations.Migration):
 
     initial = True
 
+    DIRECTORS_DESCRIPTION_HELP_TEXT = 'The name(s) of the director(s) of the content.'
+    
     dependencies = [
     ]
 
@@ -29,7 +31,7 @@ class Migration(migrations.Migration):
             name='Movie',
             fields=[
                 ('description', models.TextField(help_text='The brief summary or synopsis of the content.')),
-                ('directors', models.CharField(help_text='The name(s) of the director(s) of the content.', max_length=255)),
+                ('directors', models.CharField(help_text=DIRECTORS_DESCRIPTION_HELP_TEXT)),
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('main_actors', models.CharField(help_text='The name(s) of the main actor(s) in the content.', max_length=255)),
                 ('rating', models.DecimalField(decimal_places=2, help_text='The rating of the content on a scale from 0.00 to 10.00.', max_digits=4, validators=[django.core.validators.MaxValueValidator(Decimal('10.00')), django.core.validators.MinValueValidator(Decimal('0.00'))])),
@@ -48,7 +50,7 @@ class Migration(migrations.Migration):
             name='Series',
             fields=[
                 ('description', models.TextField(help_text='The brief summary or synopsis of the content.')),
-                ('directors', models.CharField(help_text='The name(s) of the director(s) of the content.', max_length=255)),
+                ('directors', models.CharField(help_text=DIRECTORS_DESCRIPTION_HELP_TEXT)),
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('main_actors', models.CharField(help_text='The name(s) of the main actor(s) in the content.', max_length=255)),
                 ('rating', models.DecimalField(decimal_places=2, help_text='The rating of the content on a scale from 0.00 to 10.00.', max_digits=4, validators=[django.core.validators.MaxValueValidator(Decimal('10.00')), django.core.validators.MinValueValidator(Decimal('0.00'))])),
@@ -69,7 +71,7 @@ class Migration(migrations.Migration):
             name='Episode',
             fields=[
                 ('description', models.TextField(help_text='The brief summary or synopsis of the content.')),
-                ('directors', models.CharField(help_text='The name(s) of the director(s) of the content.', max_length=255)),
+                ('directors', models.CharField(help_text=DIRECTORS_DESCRIPTION_HELP_TEXT)),
                 ('id', models.AutoField(primary_key=True, serialize=False)),
                 ('main_actors', models.CharField(help_text='The name(s) of the main actor(s) in the content.', max_length=255)),
                 ('rating', models.DecimalField(decimal_places=2, help_text='The rating of the content on a scale from 0.00 to 10.00.', max_digits=4, validators=[django.core.validators.MaxValueValidator(Decimal('10.00')), django.core.validators.MinValueValidator(Decimal('0.00'))])),
